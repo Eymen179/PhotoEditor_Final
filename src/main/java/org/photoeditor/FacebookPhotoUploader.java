@@ -1,5 +1,7 @@
 package org.photoeditor;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,34 +11,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 
 class FacebookPhotoUploader {
     public void uploadPhotoToFacebook(String filePath, JLabel lblSharePhotoProgress, String emailFromUser, String passwordFromUser) throws InterruptedException {
-        // Kaynak dosyayı geçici bir dosyaya kopyala
-        File exeTemp = null;
-        try {
-            InputStream exeStream = Main.class.getResourceAsStream("/chromedriver.exe");
-            exeTemp = File.createTempFile("chromedriver", ".exe");
-            exeTemp.deleteOnExit();
-            Files.copy(exeStream, exeTemp.toPath(), StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        // Kaynak dosyayı yükle
-        try {
-            System.setProperty("webdriver.chrome.driver", exeTemp.getAbsolutePath());
-        } catch (UnsatisfiedLinkError e) {
-            e.printStackTrace();
-        }
         
         // Selenium WebDriver'ı başlatılır.
         System.out.println("%0 - Program Başlatılıyor...");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--disable-notifications");
@@ -103,7 +84,5 @@ class FacebookPhotoUploader {
         lblSharePhotoProgress.setText("Paylaşma işlemi tamamlandı.");
         System.out.println("%100 - Paylaşma işlemi tamamlandı.");
         
-        // Uygulama sonunda temp dosyasını silmeyi unutmayın
-        exeTemp.delete();
     }
 }
