@@ -40,9 +40,8 @@ class Main extends JFrame {
         lblSharePhotoProgress = new JLabel();
         lblFilteredImageSaveProgress = new JLabel();
         lblWarning = new JLabel();
-        lblWarning2 = new JLabel();
         txtEmail = new JTextField();
-        txtPassword = new JTextField();
+        pswPassword = new javax.swing.JPasswordField();
 
         //RadioButtonların sadece biri seçilecek şekilde olması için ButtonGroup'a göre yazılan kodlar
         btnGroupFilterList.add(rbnGrayScaleEffect);
@@ -85,7 +84,6 @@ class Main extends JFrame {
         lblSocialMediaTitle.setText("Facebook'ta Paylaş");
         lblFilteredImageSave.setText("Filtreli Fotoğrafı Kaydet");
         lblWarning.setText("UYARI: Bu program, Türkçe karakter içermeyen bir dizinde çalıştırılmalıdır!");
-        lblWarning2.setText("UYARI: Programın düzgün çalışması için Chrome tarayıcınızın güncel olması gerekir!");
         lblTakePhotoProgress.setText("");
         lblSharePhotoProgress.setText("");
         lblFilteredImageSaveProgress.setText("");
@@ -129,115 +127,109 @@ class Main extends JFrame {
         });
 
         txtEmail.setText("Email");
-        txtPassword.setText("Şifre");
+
+        pswPassword.setText("Şifre");
 
         //Layout tanımlaması ve bileşenlerin layout üzerindeki konumlarının ayarlanması
-        GroupLayout layout = new GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addGap(49, 49, 49)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                                        .addComponent(btnPhoto, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                                        .addComponent(lblTakePhotoProgress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(lblWarning, GroupLayout.PREFERRED_SIZE, 407, GroupLayout.PREFERRED_SIZE))
+                                                .addGap(80, 80, 80)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(lblSocialMediaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                                        .addComponent(lblSharePhotoProgress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addGap(84, 84, 84))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(lblWarning2, GroupLayout.PREFERRED_SIZE, 455, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(49, 49, 49)
-                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(lblImage, GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                                                        .addComponent(btnPhoto, GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                                                        .addComponent(lblTakePhotoProgress, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addGap(80, 80, 80)
-                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(lblSocialMediaTitle, GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                                                                        .addComponent(lblSharePhotoProgress, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                                .addGap(84, 84, 84))
+                                                                .addGap(40, 40, 40)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                                .addComponent(lblFilterTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addGap(48, 48, 48))
+                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(rbnBrightenEffect, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(rbnGrayScaleEffect, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(rbnBlurEffect, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addGap(18, 18, 18)
+                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(rbnNonFilterMode, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(rbnFlipEffect, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(rbnDarkenEffect, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addComponent(lblFilteredImageSaveProgress, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                                                .addComponent(lblFilteredImageSave, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                                .addComponent(btnFilteredImageSave, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                        .addGap(49, 49, 49)))))
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                .addGap(40, 40, 40)
-                                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                                                                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                                                                .addComponent(lblFilterTitle, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(48, 48, 48))
-                                                                                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                                                                                        .addComponent(rbnBrightenEffect, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addComponent(rbnGrayScaleEffect, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addComponent(rbnBlurEffect, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE))
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                                                                                        .addComponent(rbnNonFilterMode, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addComponent(rbnFlipEffect, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addComponent(rbnDarkenEffect, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)))
-                                                                                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                                                                                .addComponent(lblFilteredImageSaveProgress, GroupLayout.PREFERRED_SIZE, 174, GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                                                                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                                                                                                                .addComponent(lblFilteredImageSave, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                                                .addComponent(btnFilteredImageSave, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE))
-                                                                                                        .addGap(49, 49, 49)))))
-                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                .addGap(107, 107, 107)
-                                                                                .addComponent(btnSocialMedia))
-                                                                        .addGroup(layout.createSequentialGroup()
-                                                                                .addGap(22, 22, 22)
-                                                                                .addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
-                                                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)))
-                                                                .addGap(0, 0, Short.MAX_VALUE)))))
-                                .addContainerGap())
+                                                                .addGap(22, 22, 22)
+                                                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(pswPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(113, 113, 113)
+                                                                .addComponent(btnSocialMedia)))
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblWarning, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(11, 11, 11)
-                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                        .addComponent(lblImage, GroupLayout.PREFERRED_SIZE, 182, GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblFilterTitle, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblFilterTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(rbnGrayScaleEffect)
                                                         .addComponent(rbnFlipEffect))
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(rbnDarkenEffect)
                                                         .addComponent(rbnBrightenEffect))
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(rbnNonFilterMode)
                                                         .addComponent(rbnBlurEffect))
                                                 .addGap(18, 18, 18)
                                                 .addComponent(lblFilteredImageSave)
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnFilteredImageSave, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnPhoto, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnFilteredImageSave, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(lblFilteredImageSaveProgress)
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(lblSocialMediaTitle)
                                                 .addGap(9, 9, 9)
-                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(pswPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(lblTakePhotoProgress)
                                         .addComponent(btnSocialMedia))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                                 .addComponent(lblSharePhotoProgress)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                                .addGap(42, 42, 42)
                                 .addComponent(lblWarning)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblWarning2)
                                 .addContainerGap())
         );
         pack();
@@ -264,7 +256,8 @@ class Main extends JFrame {
         lblSharePhotoProgress.setText("Fotoğraf Paylaşma işlemi başlatıldı.");
         FacebookPhotoUploader facebookPhotoUploader = new FacebookPhotoUploader();
         String emailFromUser = txtEmail.getText();
-        String passwordFromUser = txtPassword.getText();
+        //Aşağıdaki satırda değişiklik yapılmıştır.
+        String passwordFromUser = new String(pswPassword.getPassword());
         try {
             facebookPhotoUploader.uploadPhotoToFacebook(filePath, lblSharePhotoProgress, emailFromUser, passwordFromUser);
         } catch (InterruptedException e) {
@@ -371,14 +364,13 @@ class Main extends JFrame {
     private JLabel lblSocialMediaTitle;
     public JLabel lblTakePhotoProgress;
     private JLabel lblWarning;
-    private JLabel lblWarning2;
     private JRadioButton rbnBlurEffect;
     private JRadioButton rbnBrightenEffect;
     private JRadioButton rbnDarkenEffect;
     private JRadioButton rbnFlipEffect;
     private JRadioButton rbnGrayScaleEffect;
     private JRadioButton rbnNonFilterMode;
-    private JTextField txtPassword;
+    private javax.swing.JPasswordField pswPassword;
     private JTextField txtEmail;
     private ImageIcon imageIcon;
     private ImageIcon imageIcon2;
